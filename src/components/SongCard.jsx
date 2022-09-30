@@ -6,13 +6,16 @@ import { playPause, setActiveSong } from "../redux/features/playerSlice";
 
 
 
-const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
+const SongCard = ({ song, isPlaying, activeSong, data, index }) => {
 
-  const handlePauseClick = () =>{
+  const dispatch = useDispatch();
 
+  const handlePauseClick = () => {
+    dispatch(playPause(false));
   }
-  const handlePlayClick = () =>{
-
+  const handlePlayClick = () => {
+    dispatch(setActiveSong({ song, data, index }));
+    dispatch(playPause(true));
   }
   return (
     <div className="flex flex-col w-[256px] p-4 bg-white/5 opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
@@ -30,14 +33,14 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
         <img src={song.images?.coverart} />
       </div>
       <div className="flex flex-col justify-start  mt-5">
-        <p className="text-lg font-semibold text-white truncate ">
+        <p className="text-lg font-semibold text-white truncate hover:underline">
           <Link to={`/songs/${song?.key}`}>
             {song.title}
           </Link>
         </p>
-        <p className="text-sm text-gray-300 truncate">
+        <p className="text-sm text-gray-300 truncate hover:underline">
           <Link to={song.artists ? `/artists/${song?.artists[0]}` : '/top/artists'}>
-            {song.title}
+            {song.subtitle}
           </Link>
         </p>
       </div>
