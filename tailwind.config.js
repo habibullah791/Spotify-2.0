@@ -5,8 +5,9 @@ module.exports = {
     extend: {
       colors: {
         black: '#191624',
-        dark: '#282828',
-        spotify: '#0e0d0d'
+        dark: '#0B0B0B',
+        dark2: '#292929',
+        spotify: '#1DB954'
       },
       animation: {
         slideup: 'slideup 1s ease-in-out',

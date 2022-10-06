@@ -10,7 +10,9 @@
 .active svg {
   @apply text-cyan-500;
 }
-
+.color{
+  background-color: rgb(27, 26, 26)
+}
 .bar:nth-child(2) {
   animation-delay: 0.2s;
 }

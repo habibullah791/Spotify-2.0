@@ -10,7 +10,6 @@ const links = [
   { name: 'Around You', to: '/around-you', icon: HiOutlinePhotograph },
   { name: 'Top Artists', to: '/top-artists', icon: HiOutlineUserGroup },
   { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },
-  { name: 'Top Play', to: '/top-play', icon: HiPlay }
 ];
 
 const NavLinks = () => (
@@ -19,7 +18,7 @@ const NavLinks = () => (
       <NavLink
         key={link.name}
         to={link.to}
-        className='flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-cyan-900'
+        className='flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-spotify'
         onClick={() => handleClick && handleClick()}
       >
         <link.icon className='w-6 h-6 mr-2' />
@@ -33,7 +32,7 @@ const Sidebar = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className='m-0 p-0'>
+    <div className='h-full m-0 p-0'>
       <div className='md:flex hidden flex-col py-3 px-4 w-[230px] bg-[#100F0F]'>
         <img
           src={logo}
@@ -41,7 +40,7 @@ const Sidebar = () => {
         />
         <NavLinks />
       </div>
-      <div className='absolute md:hidden block top-6 right-3'>
+      <div className='absolute md:hidden mt-5 block top-10 right-3 z-10'>
         {mobileMenuOpen ? (
           <RiCloseLine className='h-10 w-10 text-white mt-5' onClick={() => setMobileMenuOpen(false)} />
         ) : (
@@ -51,9 +50,9 @@ const Sidebar = () => {
       <div className={`px-10 absolute z-10 h-screen w-2/4 md:hidden bg-[#100F0F] backdrop-blur-lg p-10 ease-in-out duration-500 ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
         <img
           src={logo}
-          className='mt-10 h-14 w-full object-contain'
+          className='h-14 w-full object-contain'
         />
-        <NavLinks onClick={() => setMobileMenuOpen(false)}/>
+        <NavLinks onClick={() => setMobileMenuOpen(false)} />
       </div>
     </div>
   );
