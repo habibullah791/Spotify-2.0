@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RiCloseLine } from 'react-icons/ri';
-import { HiOutlineHashtag, HiOutlineHome, HiOutlineMenu, HiOutlinePhotograph, HiOutlineUserGroup } from 'react-icons/hi';
+import { HiOutlineHashtag, HiOutlineHome, HiOutlineMenu, HiOutlinePhotograph, HiOutlineUserGroup, HiPlay } from 'react-icons/hi';
 
 import { logo } from '../assets';
 
@@ -10,12 +10,12 @@ const links = [
   { name: 'Around You', to: '/around-you', icon: HiOutlinePhotograph },
   { name: 'Top Artists', to: '/top-artists', icon: HiOutlineUserGroup },
   { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },
-  { name: 'Top Play', to: '/top-play', icon: HiOutlineHashtag }
+  { name: 'Top Play', to: '/top-play', icon: HiPlay }
 ];
 
 const NavLinks = () => (
   <div className='mt-10'>
-    {links.map((link, index) => (
+    {links.map((link) => (
       <NavLink
         key={link.name}
         to={link.to}
@@ -34,7 +34,7 @@ const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className='m-0 p-0'>
-      <div className='md:flex hidden flex-col py-10 px-4 w-[230px] bg-[#100F0F]'>
+      <div className='md:flex hidden flex-col py-3 px-4 w-[230px] bg-[#100F0F]'>
         <img
           src={logo}
           className='mt-10 h-14 w-full object-contain'

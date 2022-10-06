@@ -1,5 +1,5 @@
 const Searchbar = () => (
-  <div>Loader</div>
+  <div>Search bar</div>
 );
 
 export default Searchbar;

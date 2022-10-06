@@ -19,7 +19,7 @@ const Discover = () => {
     if (error) return <Error />
 
     return (
-        <div className="flex flex-col">
+        <div  ref={divRef}  className="flex flex-col">
             <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10 p-3">
                 <h2 className="font-bold text-xl text-white">Discover </h2>
                 <select className=" bg-dark  font-bold rounded-lg p-3 text-gray-300 outline-none sm:mt-0 mt-5">

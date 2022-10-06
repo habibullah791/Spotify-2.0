@@ -1,4 +1,3 @@
-import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -17,11 +16,10 @@ const TopPlay = () => {
 
     const { activeSong, isPlaying } = useSelector((state) => state.player);
     const {data} = useGetTopChartQuery();
-    const divRef = useRef();
     const topPays = data?.slice(0, 20);
 
 
-    const handlePauseClick = () => {
+    const handlePauseClick = () => { 
       dispatch(playPause(false));
     }
     const handlePlayClick = () => {
@@ -31,7 +29,7 @@ const TopPlay = () => {
 
     return(
         <div>
-        
+        Top Play
         </div>
     );
 }
