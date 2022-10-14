@@ -48,7 +48,7 @@ const TopPlay = () => {
 
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetTopChartQuery();
-  const topPlays = data?.slice(22, 27);
+  const topPlays = data?.slice(0,7);
 
 
   const handlePauseClick = () => {
