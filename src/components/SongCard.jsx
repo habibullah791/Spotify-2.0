@@ -28,7 +28,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, index }) => {
             handlePause={handlePauseClick}
             handlePlay={handlePlayClick}
             styles="top-20 left-20 p-2"
-            size="60"
+            size="55"
 
           />
         </div>
@@ -41,7 +41,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, index }) => {
           </Link>
         </p>
         <p className="text-sm text-gray-300 truncate hover:underline">
-          <Link to={song.artists ? `/artists/${song?.artists[0]}` : '/top/artists'}>
+          <Link to={song.artists ? `/artists/${song?.artists[0].adamid}` : '/top/artists'}>
             {song.subtitle}
           </Link>
         </p>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { RiCloseLine } from 'react-icons/ri';
 import { HiOutlineHashtag, HiOutlineHome, HiOutlineMenu, HiOutlinePhotograph, HiOutlineUserGroup, HiPlay } from 'react-icons/hi';
 
@@ -12,14 +12,15 @@ const links = [
   { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },
 ];
 
+
 const NavLinks = () => (
   <div className='mt-10'>
     {links.map((link) => (
       <NavLink
+      as={Link}
         key={link.name}
         to={link.to}
         className='flex flex-row justify-start items-center my-8 text-sm font-medium text-gray-400 hover:text-spotify'
-        onClick={() => handleClick && handleClick()}
       >
         <link.icon className='w-6 h-6 mr-2' />
         {link.name}
@@ -33,7 +34,7 @@ const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className='h-full m-0 p-0'>
-      <div className='md:flex hidden flex-col py-3 px-4 w-[230px] bg-[#100F0F]'>
+      <div className='md:flex hidden flex-col py-3 px-4 w-[200px] bg-[#100F0F]'>
         <img
           src={logo}
           className='mt-10 h-14 w-full object-contain'

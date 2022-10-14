@@ -17,12 +17,12 @@ const TopChartCard = ({ song, index, isPlaying, activeSong, handlePauseClick, ha
         <h3 className="font-bold text-base text-white mr-3">{index + 1}</h3>
         <img src={song.images.coverart} className="w-[80px] h-[80px] mr-5" />
         <div className="flex flex-col justify-center ">
-          <p className="text-lg font-semibold text-white truncate hover:underline">
+          <p className="text-base font-semibold text-white truncate hover:underline">
             <Link to={`/songs/${song.key}`}>
               {song.title}
             </Link>
           </p>
-          <p className="text-sm text-gray-300 truncate hover:underline">
+          <p className="text-xs text-gray-300 truncate hover:underline">
             <Link to={`/artists/${song.artists[0].adamid}`}>
               {song.subtitle}
             </Link>
@@ -35,8 +35,8 @@ const TopChartCard = ({ song, index, isPlaying, activeSong, handlePauseClick, ha
         activeSong={activeSong}
         handlePause={handlePauseClick}
         handlePlay={handlePlayClick}
-        styles="top-12"
-        size={30}
+        styles="top-14"
+        size={25}
       />
     </div>
   );
@@ -60,7 +60,7 @@ const TopPlay = () => {
   }
 
   return (
-    <div className="text-white xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] max-w-full flex flex-col">
+    <div className="hidden text-white md:ml-6 ml-0 md:mb-0 mb-6 flex-1 xl:max-w-[350px] max-w-full flex flex-col">
       <div className={`${isFetching ? 'hidden' : 'block'} w-full flex flex-col`}>
         <div className="flex flex-row justify-between items-center my-4">
           <h2 className="text-white font-bold text-3xl">Top Charts</h2>

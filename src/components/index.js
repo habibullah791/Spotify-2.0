@@ -8,6 +8,7 @@ import RelatedSongs from './RelatedSongs';
 import MusicPlayer from './MusicPlayer';
 import Loader from './Loader';
 import Error from './Error';
+import AtristSong from './ArtistSong';
 
 export {
   Sidebar,
@@ -20,4 +21,5 @@ export {
   MusicPlayer,
   Loader,
   Error,
+  AtristSong
 };
