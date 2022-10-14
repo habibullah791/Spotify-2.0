@@ -33,8 +33,8 @@ const Sidebar = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className='h-full m-0 p-0'>
-      <div className='md:flex hidden flex-col py-3 px-4 w-[200px] bg-[#100F0F]'>
+    <div className='h-full m-0 pb-10'>
+      <div className='md:flex hidden flex-col py-3 px-4 w-[160px] bg-[#100F0F]'>
         <img
           src={logo}
           className='mt-10 h-14 w-full object-contain'

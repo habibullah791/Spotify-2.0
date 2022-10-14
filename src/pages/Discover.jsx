@@ -19,7 +19,7 @@ const Discover = () => {
     return (
         <div className="flex flex-col">
             <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-1 mb-10 p-3">
-                <h2 className="font-bold text-xl text-white">Discover </h2>
+                <h2 className="font-bold text-3xl text-white">Discover </h2>
                 <select className=" bg-dark  font-bold rounded-lg p-3 text-gray-300 outline-none sm:mt-0 mt-5">
                     {genres.map((musicGenre) => <option className='p-3' key={musicGenre.value} value={musicGenre.value}>{musicGenre.title}</option>)}
                 </select>
@@ -37,6 +37,7 @@ const Discover = () => {
                     />
                 ))}
             </div>
+
         </div>
     );
 };

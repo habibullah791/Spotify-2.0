@@ -12,12 +12,12 @@ import 'swiper/css/free-mode'
 
 const TopChartCard = ({ song, index, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => {
   return (
-    <div key={index} className="flex flex-row justify-between mr-10 py-3 px-5 w-full bg-white/5 opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer hover:bg-dark2">
+    <div key={index} className="flex flex-row justify-between mr-10 py-1 px-6 w-full bg-white/5 opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer hover:bg-dark2">
       <div className="flex flex-row items-center">
         <h3 className="font-bold text-base text-white mr-3">{index + 1}</h3>
-        <img src={song.images.coverart} className="w-[80px] h-[80px] mr-5" />
+        <img src={song.images.coverart} className="w-[70px] h-[70px] mr-5" />
         <div className="flex flex-col justify-center ">
-          <p className="text-base font-semibold text-white truncate hover:underline">
+          <p className="text-sm font-semibold text-white truncate hover:underline">
             <Link to={`/songs/${song.key}`}>
               {song.title}
             </Link>
@@ -35,7 +35,7 @@ const TopChartCard = ({ song, index, isPlaying, activeSong, handlePauseClick, ha
         activeSong={activeSong}
         handlePause={handlePauseClick}
         handlePlay={handlePlayClick}
-        styles="top-14"
+        styles="top-8 left-4"
         size={25}
       />
     </div>
@@ -48,7 +48,7 @@ const TopPlay = () => {
 
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetTopChartQuery();
-  const topPlays = data?.slice(0,7);
+  const topPlays = data?.slice(0,5);
 
 
   const handlePauseClick = () => {
@@ -60,8 +60,8 @@ const TopPlay = () => {
   }
 
   return (
-    <div className="hidden text-white md:ml-6 ml-0 md:mb-0 mb-6 flex-1 xl:max-w-[350px] max-w-full flex flex-col">
-      <div className={`${isFetching ? 'hidden' : 'block'} w-full flex flex-col`}>
+    <div className="text-white md:ml-6 ml-0 md:mb-0 mb-6 flex-1 xl:max-w-[320px]  hidden lg:flex max-w-full flex-col">
+      <div className={`${isFetching ? 'hidden' : 'block'} w-full flex flex-col pb-12`}>
         <div className="flex flex-row justify-between items-center my-4">
           <h2 className="text-white font-bold text-3xl">Top Charts</h2>
           <Link to="/top-charts">
@@ -82,7 +82,7 @@ const TopPlay = () => {
           ))}
         </div>
       </div>
-      <div className={`${isFetching ? 'hidden' : 'block'} flex flex-row justify-between items-center my-10`}>
+      <div className={`${isFetching ? 'hidden' : 'block'} hidden flex flex-row justify-between items-center my-10`}>
         <h2 className="text-white font-bold text-3xl">Top Artists</h2>
         <Link to="/top-artists">
           <p className="text-gray-300 text-base cursor-pointer"> see more</p>
@@ -95,12 +95,12 @@ const TopPlay = () => {
         centeredSlides
         centeredSlidesBounds
         modules={[FreeMode]}
-        className="flex flex-row justify-between mt-10 w-full opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer"
+        className=" hidden flex flex-row justify-between mt-10 w-full opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer"
       >
         {topPlays?.map((song, i) => (
           <SwiperSlide
             key={song.key}
-            style={{ width: '25%', height: '25%' }}
+            style={{ width: '50%', height: '50%' }}
             className="bg-white/5 hover:bg-dark2 p-4 mx-10 rounded-lg animate-slideright flex flex-col justify-center items-start"
           >
             <Link to={`/artists/${song.artists[0].adamid}`}>
@@ -110,12 +110,11 @@ const TopPlay = () => {
               />
             </Link>
             <Link to={`/artists/${song.artists[0].adamid}`}>
-              <p className="text-lg font-semibold text-white mt-2">{song.subtitle}</p>
+              <p className="text-sm font-semibold text-white mt-4">{song.subtitle}</p>
               <p className="text-sm font-medium text-gray-400 mb-3">Artist</p>
             </Link>
           </SwiperSlide>
         ))}
-
       </Swiper>
     </div >
   );
