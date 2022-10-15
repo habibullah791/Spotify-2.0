@@ -3,9 +3,9 @@ import { BsFillVolumeUpFill, BsVolumeDownFill, BsFillVolumeMuteFill } from 'reac
 
 const VolumeBar = ({ value, min, max, onChange, setVolume }) => (
   <div className="hidden lg:flex flex-1 items-center justify-end">
-    {value <= 1 && value > 0.5 && <BsFillVolumeUpFill size={25} color="#FFF" onClick={() => setVolume(0)} />}
+    {value <= 1 && value > 0.5 && <BsFillVolumeUpFill size={22} color="#FFF" onClick={() => setVolume(0)} />}
     {value <= 0.5 && value > 0 && <BsVolumeDownFill size={25} color="#FFF" onClick={() => setVolume(0)} />}
-    {value === 0 && <BsFillVolumeMuteFill size={25} color="#FFF" onClick={() => setVolume(1)} />}
+    {value === 0 && <BsFillVolumeMuteFill size={20} color="#FFF" onClick={() => setVolume(1)} />}
     <input
       type="range"
       step="any"
@@ -13,7 +13,7 @@ const VolumeBar = ({ value, min, max, onChange, setVolume }) => (
       min={min}
       max={max}
       onChange={onChange}
-      className="2xl:w-40 lg:w-30 md:w-30 h-1 ml-2"
+      className="2xl:w-40 lg:w-28 md:w-28 h-1 ml-2"
     />
   </div>
 );

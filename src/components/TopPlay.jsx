@@ -12,9 +12,9 @@ import 'swiper/css/free-mode'
 
 const TopChartCard = ({ song, index, isPlaying, activeSong, handlePauseClick, handlePlayClick }) => {
   return (
-    <div key={index} className="flex flex-row justify-between mr-10 py-1 px-6 w-full bg-white/5 opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer hover:bg-dark2">
+    <div key={index} className="flex flex-row justify-between mr-10 py-1 px-2 pr-7 w-full bg-white/5 opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer hover:bg-dark2">
       <div className="flex flex-row items-center">
-        <h3 className="font-bold text-base text-white mr-3">{index + 1}</h3>
+        <h3 className="font-bold text-base text-white mr-3">{index + 1}.</h3>
         <img src={song.images.coverart} className="w-[70px] h-[70px] mr-5" />
         <div className="flex flex-col justify-center ">
           <p className="text-sm font-semibold text-white truncate hover:underline">
